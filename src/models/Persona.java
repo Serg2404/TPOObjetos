@@ -1,21 +1,28 @@
 package models;
 
 import enums.TipoNotificacion;
+import notifications.Notificacion;
+import notifications.Notificador;
 
 public class Persona {
     private String nombre;
     private String apellido;
     private Integer dni;
-    private TipoNotificacion notificacion;
+    private TipoNotificacion tipoNotificacion;
 
-    public Persona(String nombre, String apellido, Integer dni, TipoNotificacion notificacion) {
+    public Persona(String nombre, String apellido, Integer dni, TipoNotificacion tipoNotificacion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.notificacion = notificacion;
+        this.tipoNotificacion = tipoNotificacion;
     }
 
-    public void cambiarNotificacion(TipoNotificacion notificacion) {
-        this.notificacion = notificacion;
+    public void cambiarNotificacion(TipoNotificacion tipoNotificacion) {
+        this.tipoNotificacion = tipoNotificacion;
+    }
+
+    public void notificar(Notificacion notificacion) {
+        Notificador notificador = new Notificador();
+        notificador.enviar(notificacion);
     }
 }

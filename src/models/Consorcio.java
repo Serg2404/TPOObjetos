@@ -8,4 +8,8 @@ public class Consorcio {
     private CuentaBancaria cuentaBancaria;
     private List<Gasto> gastos;
     private List<HistorialDeCalculo> historialDeCalculos;
+
+    public void addGasto(Gasto gasto) {
+        this.gastos.add(gasto);
+    }
 }
