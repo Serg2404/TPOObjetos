@@ -2,8 +2,7 @@ package models;
 
 public class Pago extends Criterio {
     @Override
-    public void divisionDeExpensas() {
-        // TODO
-        return;
+    public Double divisionDeExpensas(Double saldo, Double gasto) {
+        return gasto;
     }
 }

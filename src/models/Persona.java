@@ -17,6 +17,10 @@ public class Persona {
         this.tipoNotificacion = tipoNotificacion;
     }
 
+    public String toString() {
+        return this.nombre + " " + this.apellido;
+    }
+
     public void cambiarNotificacion(TipoNotificacion tipoNotificacion) {
         this.tipoNotificacion = tipoNotificacion;
     }

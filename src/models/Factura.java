@@ -5,12 +5,20 @@ import java.util.Date;
 public class Factura {
     private Date fechaIncio;
     private Date fechaVencimiento;
-    private Float monto;
+    private Double monto;
     private Boolean pago;
-    private Float valorOrdinario;
-    private Float valorExtraordinario;
+    private Double valorOrdinario;
+    private Double valorExtraordinario;
 
-    public Factura(Date fechaIncio, Date fechaVencimiento, Float monto, Boolean pago, Float valorOrdinario, Float valorExtraordinario) {
+    public Double getMonto() {
+        return monto;
+    }
+
+    public Boolean getPago() {
+        return pago;
+    }
+
+    public Factura(Date fechaIncio, Date fechaVencimiento, Double monto, Boolean pago, Double valorOrdinario, Double valorExtraordinario) {
         this.fechaIncio = fechaIncio;
         this.fechaVencimiento = fechaVencimiento;
         this.monto = monto;
@@ -18,4 +26,6 @@ public class Factura {
         this.valorOrdinario = valorOrdinario;
         this.valorExtraordinario = valorExtraordinario;
     }
+
+
 }
