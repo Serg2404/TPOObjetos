@@ -2,6 +2,7 @@ package models;
 
 import enums.TipoCriterio;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,10 +10,16 @@ public class Consorcio {
     private Persona administrador;
     private List<UnidadFuncional> unidadesFuncionales;
     private CuentaBancaria cuentaBancaria;
-    private List<Gasto> gastos;
-    private List<HistorialDeCalculo> historialDeCalculos;
+    private List<Gasto> gastos = new ArrayList<Gasto>();
+    private List<HistorialDeCalculo> historialDeCalculos = new ArrayList<HistorialDeCalculo>();
     private Criterio criterio;
     private TipoCriterio criterioSeleccionado;
+
+    public Consorcio(Persona administrador, List<UnidadFuncional> unidades, CuentaBancaria cuenta) {
+        this.administrador = administrador;
+        this.unidadesFuncionales = unidades;
+        this.cuentaBancaria = cuenta;
+    }
 
     public void addGasto(Gasto gasto) {
         this.gastos.add(gasto);
@@ -39,11 +46,11 @@ public class Consorcio {
         this.criterioSeleccionado = criterio;
 
         if (criterio == TipoCriterio.PAGOGASTO)
-            this.criterio = new Pago();
+            this.criterio = Pago.getCriterio();
         else if (criterio == TipoCriterio.PAGOCONRESERVA)
-            this.criterio = new PagoConReserva();
+            this.criterio = PagoConReserva.getCriterio();
         else
-            this.criterio = new PagoGenerarReserva();
+            this.criterio = PagoGenerarReserva.getCriterio();
     }
 
     public Double getSaldo() {

@@ -5,21 +5,21 @@ import enums.TipoDeExpensa;
 import java.util.Date;
 
 public class Expensa {
-    private Float total;
+    private Double total;
     private Date fecha;
     private TipoDeExpensa tipoExpensa;
+
+    public Double getTotal() {
+        return total;
+    }
 
     public TipoDeExpensa getTipoExpensa() {
         return tipoExpensa;
     }
 
-    public Expensa(Date fecha, TipoDeExpensa tipoExpensa) {
+    public Expensa(Double total, Date fecha, TipoDeExpensa tipoExpensa) {
+        this.total = total;
         this.fecha = fecha;
         this.tipoExpensa = tipoExpensa;
-    }
-
-    public void calcularTotal() {
-        // TODO: Calcular total
-        return;
     }
 }

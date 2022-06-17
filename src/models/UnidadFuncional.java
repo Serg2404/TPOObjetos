@@ -3,22 +3,27 @@ package models;
 import enums.TipoUnidadFuncional;
 import notifications.Notificacion;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class UnidadFuncional {
     private Double porcentajePago;
-    private List<Persona> propietarios;
-    private List<Persona> inquilinos;
-    private List<Factura> facturas;
+    private List<Persona> propietarios = new ArrayList<Persona>();
+    private List<Persona> inquilinos = new ArrayList<Persona>();
+    private List<Factura> facturas = new ArrayList<Factura>();
     private Expensa expensa;
     private Double valorOrdinario;
     private Double valorExtraOrdinario;
-    private Double deuda;
+    private Double deuda = 0.0;
     private TipoUnidadFuncional unidadFuncional;
 
     public Double getDeuda() {
-        return deuda;
+        return this.deuda;
+    }
+
+    public List<Factura> getFacturas() {
+        return this.facturas;
     }
 
     public void setValorOrdinario(Double valorOrdinario) {
@@ -39,7 +44,7 @@ public class UnidadFuncional {
     }
 
     public void addInquilino(Persona inquilino) {
-        this.propietarios.add(inquilino);
+        this.inquilinos.add(inquilino);
     }
 
     public void generarFactura(Double total) {

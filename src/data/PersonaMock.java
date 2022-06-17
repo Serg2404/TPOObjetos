@@ -1,12 +1,13 @@
 package data;
 
 import enums.TipoNotificacion;
+import models.Administrador;
 import models.Persona;
 
 public class PersonaMock {
     public static Persona adminMock(){
-        Persona personaMock =
-                new Persona("Administrador",
+        Administrador personaMock =
+                new Administrador("Administrador",
                         "Admin",
                         23434534,
                         TipoNotificacion.EMAIL);

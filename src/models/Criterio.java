@@ -24,7 +24,9 @@ public abstract class Criterio {
 
         unidadFuncional.setValorOrdinario(valorOrdinario);
         unidadFuncional.setValorExtraOrdinario(valorExtraOrdinario);
-        return unidadFuncional.calcularMontoPagar(total) + unidadFuncional.getDeuda();
+        Double monto = unidadFuncional.calcularMontoPagar(total);
+        Double deuda = unidadFuncional.getDeuda();
+        return monto + deuda;
     }
 
     public abstract Double divisionDeExpensas(Double saldo, Double gasto);

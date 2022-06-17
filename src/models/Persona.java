@@ -26,7 +26,8 @@ public class Persona {
     }
 
     public void notificar(Notificacion notificacion) {
+        System.out.println("Notificando a: " + toString() + " por medio de " + this.tipoNotificacion);
         Notificador notificador = new Notificador();
-        notificador.enviar(notificacion);
+        //notificador.enviar(notificacion);
     }
 }

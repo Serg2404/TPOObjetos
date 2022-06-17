@@ -27,5 +27,12 @@ public class Factura {
         this.valorExtraordinario = valorExtraordinario;
     }
 
-
+    public String toString() {
+        return "Fecha inicio: " + this.fechaIncio + "\n" +
+                "Fecha vencimiento: " + this.fechaVencimiento + "\n" +
+                "Monto: " + this.monto + "\n" +
+                "Pagada?: " + this.pago + "\n" +
+                "Valor ordinario: " + this.valorOrdinario + "\n" +
+                "Valor extraordinario: " + this.valorExtraordinario + "\n";
+    }
 }
