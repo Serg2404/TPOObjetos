@@ -3,6 +3,26 @@ package models;
 import java.util.Date;
 
 public class Factura {
+
+    public Date getFechaIncio() {
+        return fechaIncio;
+    }
+
+    public void setFechaIncio(Date fechaIncio) {
+        this.fechaIncio = fechaIncio;
+    }
+
+    public Date getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(Date fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public void pagar() {
+        this.pago = Boolean.TRUE;
+    }
     private Date fechaIncio;
     private Date fechaVencimiento;
     private Double monto;

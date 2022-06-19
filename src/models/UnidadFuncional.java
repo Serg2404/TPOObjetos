@@ -82,8 +82,19 @@ public class UnidadFuncional {
              this.facturas) {
             if (!factura.getPago())
                 deuda += factura.getMonto();
-        };
+        }
         this.deuda = deuda;
         return deuda;
+    }
+
+    public void pagarFactura(Date fechaAPagar) {
+        Date todayDate = new Date();
+        Factura facturaAPagar = this.facturas.stream().filter(factura -> fechaAPagar.equals(factura.getFechaIncio())).findFirst().orElse(null);
+        if(todayDate.after(facturaAPagar.getFechaVencimiento())) {
+            System.out.println("la factura ya vencio y no puede ser pagada");
+        }
+        else{
+            facturaAPagar.pagar();
+        }
     }
 }

@@ -18,7 +18,13 @@ public class main {
         cargarGastos(consorcio);
 
         // El administrador calcula y genera expensas de cada unidad funcional (Tambien genera la notificacion a cada interesado)
-        calcularExpensas(consorcio, unidades);
+        calcularExpensasPagoGasto(consorcio, unidades);
+
+        // El administrador calcula y genera expensas de cada unidad funcional (Tambien genera la notificacion a cada interesado)
+        calcularExpensasPagoConReserva(consorcio, unidades);
+
+        // El administrador calcula y genera expensas de cada unidad funcional (Tambien genera la notificacion a cada interesado)
+        calcularExpensasPagoReserva(consorcio, unidades);
 
         // Ver las facturas que se generaron
         visualizarFacturas(unidades);
@@ -32,8 +38,24 @@ public class main {
         consorcio.addGasto(new GastoRecurrente(expensa.getTotal(), "Gasto 1", expensa, 2));
     }
 
-    private static void calcularExpensas(Consorcio consorcio, List<UnidadFuncional> unidades) {
+    private static void calcularExpensasPagoGasto(Consorcio consorcio, List<UnidadFuncional> unidades) {
         consorcio.cambiarCriterio(TipoCriterio.PAGOGASTO);
+        for (UnidadFuncional unidad: unidades) {
+            consorcio.liquidar(unidad);
+        }
+    }
+
+    private static void calcularExpensasPagoConReserva(Consorcio consorcio, List<UnidadFuncional> unidades) {
+        consorcio.cambiarCriterio(TipoCriterio.PAGOCONRESERVA);
+        consorcio.setSaldo(1000.0);
+        for (UnidadFuncional unidad: unidades) {
+            consorcio.liquidar(unidad);
+        }
+
+    }
+
+    private static void calcularExpensasPagoReserva(Consorcio consorcio, List<UnidadFuncional> unidades) {
+        consorcio.cambiarCriterio(TipoCriterio.PAGORESERVA);
         for (UnidadFuncional unidad: unidades) {
             consorcio.liquidar(unidad);
         }

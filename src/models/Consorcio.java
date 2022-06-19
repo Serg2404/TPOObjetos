@@ -57,4 +57,12 @@ public class Consorcio {
         Date date = new Date();
         return this.cuentaBancaria.getSaldoActual("12323", "323", date);
     }
+
+    public void setSaldo(double monto) {
+        this.cuentaBancaria.setSaldoActual(monto);
+    }
+
+    public void descontarSaldo(Double monto) {
+        this.cuentaBancaria.descontarSaldo(monto);
+    }
 }

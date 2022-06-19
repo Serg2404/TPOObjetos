@@ -11,4 +11,12 @@ public class CuentaBancaria {
         // TODO: No se si hay que hacer algo con cbu, token y fecha.
         return this.saldoActual;
     }
+
+    public void setSaldoActual(Double monto) {
+        this.saldoActual = monto;
+    }
+
+    public void descontarSaldo(Double monto) {
+        this.saldoActual = this.saldoActual - monto;
+    }
 }
