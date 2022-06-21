@@ -10,6 +10,11 @@ public class Consorcio {
     private Persona administrador;
     private List<UnidadFuncional> unidadesFuncionales;
     private CuentaBancaria cuentaBancaria;
+
+    public List<Gasto> getGastos() {
+        return gastos;
+    }
+
     private List<Gasto> gastos = new ArrayList<Gasto>();
     private List<HistorialDeCalculo> historialDeCalculos = new ArrayList<HistorialDeCalculo>();
     private Criterio criterio;

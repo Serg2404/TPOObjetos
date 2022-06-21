@@ -12,7 +12,6 @@ public class UnidadFuncional {
     private List<Persona> propietarios = new ArrayList<Persona>();
     private List<Persona> inquilinos = new ArrayList<Persona>();
     private List<Factura> facturas = new ArrayList<Factura>();
-    private Expensa expensa;
     private Double valorOrdinario;
     private Double valorExtraOrdinario;
     private Double deuda = 0.0;
