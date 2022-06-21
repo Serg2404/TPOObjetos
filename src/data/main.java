@@ -28,6 +28,9 @@ public class main {
 
         // Ver las facturas que se generaron
         visualizarFacturas(unidades);
+
+        // Visualizar histórico
+        visualizarHistorico(consorcio);
     }
 
     private static void cargarGastos(Consorcio consorcio) {
@@ -35,7 +38,7 @@ public class main {
         consorcio.addGasto(new GastoNormal(expensa.getTotal(), "Gasto 1", expensa));
 
         Expensa expensa2 = new Expensa(50.0, new Date(), TipoDeExpensa.EXTRAORDINARIA);
-        consorcio.addGasto(new GastoRecurrente(expensa.getTotal(), "Gasto 1", expensa, 2));
+        consorcio.addGasto(new GastoRecurrente(expensa.getTotal(), "Gasto 1", expensa2, 2));
     }
 
     private static void calcularExpensasPagoGasto(Consorcio consorcio, List<UnidadFuncional> unidades) {
@@ -66,6 +69,13 @@ public class main {
             for (Factura factura: unidad.getFacturas()) {
                 System.out.println(factura.toString());
             }
+        }
+    }
+
+    private static void visualizarHistorico(Consorcio consorcio){
+        List<HistorialDeCalculo> historial = consorcio.obtenerHistorico();
+        for (HistorialDeCalculo historico: historial) {
+            System.out.println(historico.toString());
         }
     }
 }

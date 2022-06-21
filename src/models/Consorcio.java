@@ -42,6 +42,10 @@ public class Consorcio {
         this.historialDeCalculos.add(historico);
     }
 
+    public List<HistorialDeCalculo> obtenerHistorico(){
+        return this.historialDeCalculos;
+    }
+
     public void cambiarCriterio(TipoCriterio criterio) {
         this.criterioSeleccionado = criterio;
 
